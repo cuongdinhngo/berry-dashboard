@@ -42,6 +42,7 @@
     
     <v-spacer></v-spacer>
 
+    <!-- Quick Access -->
     <ItemHoverButton
       :button="{
         icon: 'mdi-access-point',
@@ -91,10 +92,11 @@
       </v-card>
     </v-menu>
 
+    <!-- Language Selection -->
     <ItemHoverButton
       :button="{
         icon: 'mdi-translate',
-        color: 'secondary',
+        color: 'primary',
         size: '34',
         defaultVariant: 'tonal',
         hoverVariant: 'flat',
@@ -128,6 +130,7 @@
       </v-card>
     </v-menu>
 
+    <!-- Notification Menu -->
     <ItemHoverButton
       :button="{
         icon: 'mdi-bell-outline',
@@ -146,7 +149,7 @@
             <span>All Notifications</span>
             <v-chip color="yellow-darken-4" class="ml-2">10</v-chip>
           </div>
-          <NuxtLink to="/notifications" class="text-caption">
+          <NuxtLink class="text-caption">
             Mark as all read
           </NuxtLink>
         </v-card-title>
@@ -162,30 +165,32 @@
           ></v-select>
         </v-card-title>
 
-        <v-card-text class="px-0">
-          <v-list-item
-            v-for="(notification, index) in 10"
-            :key="index"
-            class="d-flex align-center border-t-thin border-b-thin pa-4"
-            link
-          >
-            <template #prepend>
-              <v-avatar
-                image="https://randomuser.me/api/portraits/lego/1.jpg"
-                size="small"
-              ></v-avatar>
-            </template>
-            <v-list-item-title class="d-flex justify-space-between">
-              <span class="text-subtitle-2 text-black">Notification {{ index + 1 }}</span>
-              <span class="text-caption">2 min ago</span>
-            </v-list-item-title>
-            <v-list-item-subtitle class="text-caption">
-              This is a sample notification message to demonstrate the notification feature.
-            </v-list-item-subtitle>
-          </v-list-item>
-        </v-card-text>
+        <ItemScrollableCard
+          :height="400"
+        >
+            <v-list-item
+              v-for="(notification, index) in 10"
+              :key="index"
+              class="d-flex align-center border-t-thin pa-4"
+              link
+            >
+              <template #prepend>
+                <v-avatar
+                  image="https://randomuser.me/api/portraits/lego/1.jpg"
+                  size="small"
+                ></v-avatar>
+              </template>
+              <v-list-item-title class="d-flex justify-space-between">
+                <span class="text-subtitle-2 text-black">Notification {{ index + 1 }}</span>
+                <span class="text-caption">2 min ago</span>
+              </v-list-item-title>
+              <v-list-item-subtitle class="text-caption">
+                This is a sample notification message to demonstrate the notification feature.
+              </v-list-item-subtitle>
+            </v-list-item>
+        </ItemScrollableCard>
 
-        <v-card-actions>
+        <v-card-actions class="border-t-thin">
           <v-btn
             color="blue-darken-1"
             variant="text"
@@ -209,17 +214,120 @@
             isHovering ? 'bg-blue-darken-1': '',
             'px-2 mx-4'
           ]"
+          id="user-settings-menu"
         >
           <v-avatar image="https://randomuser.me/api/portraits/lego/5.jpg" size="small" class="mx-2"></v-avatar>
           <v-icon :color="isHovering ? 'white' : ''" class="mx-2">mdi-cog-outline</v-icon>
         </v-btn>
       </template>
     </v-hover>
+    <v-menu activator="#user-settings-menu" :close-on-content-click="false">
+      <v-card min-width="200px" class="bg-white rounded-lg pa-4" elevation="10">
+        <v-card-title class="d-flex flex-column px-0">
+          <div class="text-subtitle-2">
+            <span class="font-weight-bold">Good Morning, </span>
+            <span>John Doe</span>
+          </div>
+          <span class="text-caption">Project admin</span>
+        </v-card-title>
+
+        <v-card-title class="my-2 px-0">
+          <v-text-field
+            variant="outlined"
+            placeholder="Search ..."
+            prepend-inner-icon="mdi-magnify"
+            hide-details
+            color="blue"
+            rounded="lg"
+            density="comfortable"
+          ></v-text-field>
+        </v-card-title>
+
+
+        <v-divider></v-divider>
+
+        <v-card class="my-4 elevation-0 bg-yellow-lighten-4 rounded-lg">
+          <v-row no-gutters>
+            <v-col sm="8" md="8" lg="8">
+              <v-card-title class="text-black pa-3">
+                <div class="d-flex flex-column">
+                  <p class="text-subtitle-1 mb-1 font-weight-bold">Upgrade your plan</p>
+                  <p class="text-caption mb-0" style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
+                    70% discount for 1 year subscriptions.
+                  </p>
+                </div>
+              </v-card-title>
+              <v-card-actions>
+                <v-btn
+                  color="yellow-darken-3"
+                  text="Go Premium"
+                  variant="flat"
+                  class="font-weight-bold"
+                >
+                </v-btn>
+              </v-card-actions>
+            </v-col>
+          </v-row>
+        </v-card>
+
+        <v-divider></v-divider>
+
+        <v-card class="my-4 elevation-0 bg-blue-lighten-5 rounded-lg">
+          <v-list-item
+            density="compact"
+            class="my-0 py-0"
+          >
+            <template #title>
+              <span class="text-subtitle-2 font-weight-bold">Start DND Mode</span>
+            </template>
+            <template #append>
+              <v-switch
+                color="primary"
+                hide-details
+              ></v-switch>
+            </template>
+          </v-list-item>
+          <v-list-item
+            density="compact"
+            class="my-0 py-0"
+          >
+            <template #title>
+              <span class="text-subtitle-2 font-weight-bold">Allow Notifications</span>
+            </template>
+            <template #append>
+              <v-switch
+                color="primary"
+                hide-details
+              ></v-switch>
+            </template>
+          </v-list-item>
+        </v-card>
+
+        <v-divider></v-divider>
+
+        <v-list nav slim>
+          <v-list-item
+            v-for="(setting, index) in USER_SETTINGS"
+            :key="index"
+            :value="setting.value"
+            :prepend-icon="setting.icon"
+            :title="setting.title"
+            density="comfortable"
+            color="secondary"
+            link
+          >
+            <template #append>
+              <v-chip v-if="setting?.count" color="yellow-darken-3">{{ setting.count }}</v-chip>
+            </template>
+          </v-list-item>
+        </v-list>
+      </v-card>
+    </v-menu>
 
   </v-app-bar>
 </template>
 <script setup lang="ts">
-import { QUICK_ACCESS, LANGUAGES } from '~/config/app-bar';
+import { QUICK_ACCESS, LANGUAGES, USER_SETTINGS } from '~/config/app-bar';
 
 const rail = defineModel('rail', {
   type: Boolean,

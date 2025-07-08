@@ -98,3 +98,21 @@ export const QUICK_ACCESS = [
     ]
   },
 ];
+
+export const USER_SETTINGS = [
+  {
+    title: 'Social Profile',
+    icon: 'mdi-account-outline',
+    value: 'social-profile',
+    count: 2
+  },
+  {
+    title: 'Account Settings',
+    icon: 'mdi-cog-outline',
+    value: 'account-settings',
+  },
+  {
+    title: 'Logout',
+    icon: 'mdi-logout-variant',
+  },
+];
