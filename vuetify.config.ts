@@ -86,6 +86,9 @@ export default defineVuetifyConfiguration({
           'berry-green': '#28A745',
           'berry-blue': '#007BFF',
           'berry-indigo': '#6610F2',
+
+          //Container Bg Color:
+          'container-bg': '#EEF2F6',
         }
       },
       // Dark theme variant
@@ -102,7 +105,7 @@ export default defineVuetifyConfiguration({
           surface: '#1E1E1E',
           background: '#121212',
           'on-surface': '#FFFFFF',
-          'on-background': '#FFFFFF',
+          'on-background': '#FFFFFF'
         }
       }
     }
