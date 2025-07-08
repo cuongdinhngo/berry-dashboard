@@ -39,7 +39,7 @@
           :key="idx"
           :title="item.title"
           :prepend-icon="item.icon"
-          :value="item.title"
+          :value="item.value || item.title"
           color="secondary"
           density="compact"
           nav
@@ -65,7 +65,7 @@
             v-for="(subMenu, i) in item.subItems"
             :key="i"
             :title="subMenu.title"
-            :value="subMenu.title"
+            :value="subMenu.value || subMenu.title"
             prepend-icon="mdi-circle-small"
             density="compact" nav
             color="secondary"

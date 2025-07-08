@@ -5,10 +5,12 @@ export const NAV_MENU = [
       {
         title: 'Default',
         icon: 'mdi-view-dashboard',
+        value: 'dashboard-default',
       },
       {
         title: 'Analytics',
         icon: 'mdi-chart-bar',
+        value: 'dashboard-analytics',
       },
     ]
   },
@@ -21,15 +23,19 @@ export const NAV_MENU = [
         subItems: [
           {
             title: 'Social Profile',
+            value: 'users-social-profile',
           },
           {
             title: 'Accounts',
+            value: 'users-accounts',
           },
           {
             title: 'Cards',
+            value: 'users-cards',
           },
           {
             title: 'List',
+            value: 'users-list',
           },
         ]
       },
@@ -39,33 +45,41 @@ export const NAV_MENU = [
         subItems: [
           {
             title: 'Customer List',
+            value: 'customers-list',
           },
           {
             title: 'Create Invoice',
+            value: 'customers-create-invoice',
           },
           {
             title: 'Order Details',
+            value: 'customers-order-details',
           },
           {
             title: 'Product List',
+            value: 'customers-product-list',
           },
         ]
       },
       {
         title: 'Chat',
         icon: 'mdi-chat',
+        value: 'chat',
       },
       {
         title: 'Calendar',
         icon: 'mdi-calendar',
+        value: 'calendar',
       },
       {
         title: 'Mail',
         icon: 'mdi-email',
+        value: 'mail',
       },
       {
         title: 'Kanban',
         icon: 'mdi-view-dashboard-variant-outline',
+        value: 'kanban',
       },
       {
         title: 'Contact',
@@ -73,9 +87,11 @@ export const NAV_MENU = [
         subItems: [
           {
             title: 'Card',
+            value: 'contact-card',
           },
           {
             title: 'List',
+            value: 'contact-list',
           },
         ]
       },
@@ -85,15 +101,19 @@ export const NAV_MENU = [
         subItems: [
           {
             title: 'Products',
+            value: 'ecommerce-products',
           },
           {
             title: 'Product Details',
+            value: 'ecommerce-product-details',
           },
           {
             title: 'Product List',
+            value: 'ecommerce-product-list',
           },
           {
             title: 'Checkout',
+            value: 'ecommerce-checkout',
           },
         ]
       }
