@@ -14,14 +14,14 @@
 
     <!-- Main Content -->
     <v-main>
-      <v-container fluid class="bg-container-bg rounded-lg" min-height="100vh">
+      <v-container fluid class="bg-container-bg rounded-lg" min-height="90vh">
         <slot />
       </v-container>
     </v-main>
 
     <!-- Footer -->
     <v-footer app class="bg-background" :absolute="true">
-      <span class="text-center">Made with Love © 2025 My Application</span>
+      <span class="text-center">Made with ❤️ by Cuong Ngo © 2025</span>
     </v-footer>
   </v-app>
 </template>
