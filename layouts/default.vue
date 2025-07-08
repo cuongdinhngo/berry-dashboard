@@ -14,8 +14,15 @@
 
     <!-- Main Content -->
     <v-main>
-      <slot />
+      <v-container fluid class="bg-container-bg rounded-lg" min-height="100vh">
+        <slot />
+      </v-container>
     </v-main>
+
+    <!-- Footer -->
+    <v-footer app class="bg-background" :absolute="true">
+      <span class="text-center">Made with Love © 2025 My Application</span>
+    </v-footer>
   </v-app>
 </template>
 <script setup lang="ts">
