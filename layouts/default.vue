@@ -21,5 +21,5 @@
 <script setup lang="ts">
 import { NAV_MENU } from '@/config/nav-menu';
 const rail = ref(false);
-const navDrawer = ref(false);
+const navDrawer = ref(true);
 </script>

@@ -395,21 +395,22 @@ const rail = defineModel('rail', {
   type: Boolean,
   default: false,
 });
-
-const { smAndDown } = useDisplay();
-
 const navDrawer = defineModel('navDrawer', {
   type: Boolean,
   default: false,
 });
+
+const { smAndDown } = useDisplay();
+
 const selectedLanguage = ref('en');
 const mobileSearch = ref(false);
 
 function toggleNavDrawer() {
-  if (smAndDown) {
+  if (smAndDown.value) {
+    console.log('Toggling Nav Drawer =>>>');
     navDrawer.value = !navDrawer.value;
-  }
-  else {
+  } else {
+    console.log('Toggling Rail =>>>');
     rail.value = !rail.value;
   }
 }
