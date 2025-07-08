@@ -57,7 +57,7 @@
     />
 
     <ItemHoverButton
-      v-if="mobile && !mobileSearch"
+      v-if="smAndDown && !mobileSearch"
       :button="{
         icon: 'mdi-magnify',
         color: 'secondary',
@@ -68,7 +68,7 @@
       @click="mobileSearch = !mobileSearch"
     />
     <v-sheet
-      v-if="!mobile"
+      v-if="!smAndDown"
     >
       <v-row no-gutters>
         <v-col lg="12" md="12">
@@ -102,7 +102,7 @@
 
     <!-- Quick Access -->
     <ItemHoverButton
-      v-if="!mobile"
+      v-if="!smAndDown"
       :button="{
         icon: 'mdi-access-point',
         color: 'secondary',
@@ -396,7 +396,7 @@ const rail = defineModel('rail', {
   default: false,
 });
 
-const { mobile } = useDisplay();
+const { smAndDown } = useDisplay();
 
 const navDrawer = defineModel('navDrawer', {
   type: Boolean,
@@ -406,14 +406,11 @@ const selectedLanguage = ref('en');
 const mobileSearch = ref(false);
 
 function toggleNavDrawer() {
-  if (mobile) {
+  if (smAndDown) {
     navDrawer.value = !navDrawer.value;
   }
   else {
     rail.value = !rail.value;
   }
-
-  console.log('Toggle Nav Drawer:', navDrawer.value);
-  console.log('Toggle Rail:', rail.value);
 }
 </script>
