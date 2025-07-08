@@ -30,7 +30,7 @@
       :key="index"
       slim
     >
-      <v-list-subheader v-if="menu.head" :key="menu.head" class="text-subtitle-2 font-weight-bold text-black px-0">{{ menu.head }}</v-list-subheader>
+      <v-list-subheader v-if="menu.head" :key="menu.head" class="text-subtitle-2 font-weight-bold text-on-surface px-0">{{ menu.head }}</v-list-subheader>
       <template
         v-for="(item, idx) in menu.items"
       >

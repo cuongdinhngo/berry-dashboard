@@ -131,7 +131,7 @@
               :key="index"
               class="pa-0"
             >
-              <v-list-subheader :key="menu.head" class="font-weight-bold text-black">{{ menu.head }}</v-list-subheader>
+              <v-list-subheader :key="menu.head" class="font-weight-bold text-on-surface">{{ menu.head }}</v-list-subheader>
               <v-list-item
                 v-for="(item, idx) in menu.items"
                 :key="idx"
@@ -142,7 +142,7 @@
               >
                 <template #title>
                   <v-icon class="mr-1" size="large">{{ item.icon }}</v-icon>
-                  <span class="text-subtitle-2 text-black">{{ item.title }}</span>
+                  <span class="text-subtitle-2 text-on-surface">{{ item.title }}</span>
                 </template>
               </v-list-item>
             </v-list>
@@ -183,7 +183,7 @@
                 size="x-small"
                 class="mr-2"
               />
-              <span class="text-subtitle-2 text-black">{{ lang.title }}</span>
+              <span class="text-subtitle-2 text-on-surface">{{ lang.title }}</span>
             </template>
           </v-list-item>
         </v-list>
@@ -242,7 +242,7 @@
                 ></v-avatar>
               </template>
               <v-list-item-title class="d-flex justify-space-between">
-                <span class="text-subtitle-2 text-black">Notification {{ index + 1 }}</span>
+                <span class="text-subtitle-2 text-on-surface">Notification {{ index + 1 }}</span>
                 <span class="text-caption">2 min ago</span>
               </v-list-item-title>
               <v-list-item-subtitle class="text-caption">
@@ -262,6 +262,20 @@
         </v-card-actions>
       </v-card>
     </v-menu>
+
+    <!-- Toggle Theme -->
+    <ItemHoverButton
+      :button="{
+        icon: currentTheme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night',
+        color: 'secondary',
+        size: '34',
+        defaultVariant: 'tonal',
+        hoverVariant: 'flat',
+        class: 'mr-2',
+        id: 'message-menu'
+      }"
+      @click="toggleTheme"
+    />
 
     <!-- User Settings Menu -->
     <v-hover v-if="!mobileSearch">
@@ -311,7 +325,7 @@
         <v-card class="my-4 elevation-0 bg-yellow-lighten-4 rounded-lg">
           <v-row no-gutters>
             <v-col sm="8" md="8" lg="8">
-              <v-card-title class="text-black pa-3">
+              <v-card-title class="text-on-surface pa-3">
                 <div class="d-flex flex-column">
                   <p class="text-subtitle-1 mb-1 font-weight-bold">Upgrade your plan</p>
                   <p class="text-caption mb-0" style="white-space: normal; word-wrap: break-word; overflow-wrap: break-word;">
@@ -401,9 +415,11 @@ const navDrawer = defineModel('navDrawer', {
 });
 
 const { smAndDown } = useDisplay();
+const theme = useTheme();
 
 const selectedLanguage = ref('en');
 const mobileSearch = ref(false);
+const currentTheme = ref('light');
 
 function toggleNavDrawer() {
   if (smAndDown.value) {
@@ -413,5 +429,10 @@ function toggleNavDrawer() {
     console.log('Toggling Rail =>>>');
     rail.value = !rail.value;
   }
+}
+
+function toggleTheme () {
+  theme.global.name.value = theme.global.current.value.dark ? 'berry' : 'berry-dark'
+  currentTheme.value = theme.global.name.value === 'berry' ? 'light' : 'dark';
 }
 </script>

@@ -88,24 +88,26 @@ export default defineVuetifyConfiguration({
           'berry-indigo': '#6610F2',
 
           //Container Bg Color:
-          'container-bg': '#EEF2F6',
+          'container-bg': '#EEF2F6'
         }
       },
       // Dark theme variant
       'berry-dark': {
         dark: true,
         colors: {
-          primary: '#5E72E4',
-          secondary: '#F7931E',
+          primary: '#1E88E5',
+          secondary: '#7C4DFF',
           accent: '#8C90FC',
           error: '#F5365C',
           warning: '#FB6340',
           info: '#11CDEF',
           success: '#2DCE89',
-          surface: '#1E1E1E',
-          background: '#121212',
+          surface: '#111936',
+          background: '#111936',
           'on-surface': '#FFFFFF',
-          'on-background': '#FFFFFF'
+          'on-background': '#FFFFFF',
+          //Container Bg Color:
+          'container-bg': '#1A1F36'
         }
       }
     }

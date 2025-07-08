@@ -193,10 +193,10 @@
         <v-col cols="12" sm="12" md="12" lg="12">
           <v-card width="100%" min-height="85px" class="bg-background">
             <template #title>
-              <span class="text-subtitle-1 text-black font-weight-bold">$203K</span>
+              <span class="text-subtitle-1 text-on-surface font-weight-bold">$203K</span>
             </template>
             <template #subtitle>
-              <span class="text-caption text-black font-weight-bold">Total Income</span>
+              <span class="text-caption text-on-surface font-weight-bold">Total Income</span>
             </template>
             <template #prepend>
               <ItemHoverButton
@@ -247,10 +247,10 @@
                 <span class="text-subtitle-1 text-primary font-weight-bold">VN Index</span>
               </template>
               <template #subtitle>
-                <span class="text-caption text-black font-weight-bold">+0.5%</span>
+                <span class="text-caption text-on-surface font-weight-bold">+0.5%</span>
               </template>
               <template #append>
-                <span class="text-h6 text-black font-weight-bold">$1345.00</span>
+                <span class="text-h6 text-on-surface font-weight-bold">$1345.00</span>
               </template>
               <v-card-text>
                 <v-sparkline
@@ -279,10 +279,10 @@
                   class="px-0"
                 >
                   <template #title>
-                    <span class="text-subtitle-2 text-black font-weight-bold">{{ item.title }}</span>
+                    <span class="text-subtitle-2 text-on-surfacek font-weight-bold">{{ item.title }}</span>
                   </template>
                   <template #subtitle>
-                    <span class="text-caption text-black font-weight-bold">{{ item.percent }}%</span>
+                    <span class="text-caption text-on-surface font-weight-bold">{{ item.percent }}%</span>
                   </template>
                   <template #append>
                     <span :class="[
