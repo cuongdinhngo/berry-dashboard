@@ -108,7 +108,9 @@ export default defineVuetifyConfiguration({
     }
   },
   defaults: {
-
+    VBtn: {
+      class: 'text-none'
+    }
   },
   display: {
     mobileBreakpoint: 'sm',
