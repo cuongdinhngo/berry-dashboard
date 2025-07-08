@@ -3,7 +3,7 @@
     app
     expand-on-hover
     :rail="rail"
-    class="pl-2"
+    class="pl-2 bg-background"
     v-model="navDrawer"
     floating
   >

@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app height="80" class="px-2 elevation-0">
+  <v-app-bar app height="80" class="px-2 elevation-0 bg-background">
     <v-sheet
       v-if="mobileSearch"
       width="100%"
