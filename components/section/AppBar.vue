@@ -1,6 +1,50 @@
 <template>
-  <v-app-bar app elevation="1" height="80">
+  <v-app-bar app height="80" class="px-2 elevation-0">
+    <v-sheet
+      v-if="mobileSearch"
+      width="100%"
+    >
+      <v-row no-gutters>
+        <v-col cols="12" sm="12" md="12" lg="12" >
+          <v-text-field
+            density="comfortable"
+            variant="outlined"
+            placeholder="Search..."
+            prepend-inner-icon="mdi-magnify"
+            hide-details
+            min-width="100%"
+            color="blue"
+            rounded="lg"
+          >
+            <template #append-inner>
+              <ItemHoverButton
+                :button="{
+                  icon: 'mdi-tune',
+                  color: 'secondary',
+                  size: '34',
+                  defaultVariant: 'tonal',
+                  hoverVariant: 'flat',
+                }"
+              />
+              <ItemHoverButton
+                :button="{
+                  icon: 'mdi-close',
+                  color: 'red',
+                  size: '34',
+                  defaultVariant: 'tonal',
+                  hoverVariant: 'flat',
+                  class: 'ml-2',
+                }"
+                @click="mobileSearch = false"
+              />
+            </template>
+          </v-text-field>
+        </v-col>
+      </v-row>
+    </v-sheet>
+
     <ItemHoverButton
+      v-if="!mobileSearch"
       :button="{
         icon: 'mdi-menu',
         color: 'secondary',
@@ -9,9 +53,23 @@
         hoverVariant: 'flat',
         class: 'mr-2',
       }"
-      @click="rail = !rail"
+      @click="toggleNavDrawer"
     />
-    <v-sheet>
+
+    <ItemHoverButton
+      v-if="mobile && !mobileSearch"
+      :button="{
+        icon: 'mdi-magnify',
+        color: 'secondary',
+        size: '34',
+        defaultVariant: 'tonal',
+        hoverVariant: 'flat',
+      }"
+      @click="mobileSearch = !mobileSearch"
+    />
+    <v-sheet
+      v-if="!mobile"
+    >
       <v-row no-gutters>
         <v-col lg="12" md="12">
           <v-text-field
@@ -44,6 +102,7 @@
 
     <!-- Quick Access -->
     <ItemHoverButton
+      v-if="!mobile"
       :button="{
         icon: 'mdi-access-point',
         color: 'secondary',
@@ -94,6 +153,7 @@
 
     <!-- Language Selection -->
     <ItemHoverButton
+      v-if="!mobileSearch"
       :button="{
         icon: 'mdi-translate',
         color: 'primary',
@@ -132,6 +192,7 @@
 
     <!-- Notification Menu -->
     <ItemHoverButton
+      v-if="!mobileSearch"
       :button="{
         icon: 'mdi-bell-outline',
         color: 'secondary',
@@ -202,7 +263,8 @@
       </v-card>
     </v-menu>
 
-    <v-hover>
+    <!-- User Settings Menu -->
+    <v-hover v-if="!mobileSearch">
       <template v-slot:default="{ isHovering, props }">
         <v-btn
           color="blue-lighten-1"
@@ -333,5 +395,25 @@ const rail = defineModel('rail', {
   type: Boolean,
   default: false,
 });
+
+const { mobile } = useDisplay();
+
+const navDrawer = defineModel('navDrawer', {
+  type: Boolean,
+  default: false,
+});
 const selectedLanguage = ref('en');
+const mobileSearch = ref(false);
+
+function toggleNavDrawer() {
+  if (mobile) {
+    navDrawer.value = !navDrawer.value;
+  }
+  else {
+    rail.value = !rail.value;
+  }
+
+  console.log('Toggle Nav Drawer:', navDrawer.value);
+  console.log('Toggle Rail:', rail.value);
+}
 </script>

@@ -1,9 +1,10 @@
 <template>
   <v-navigation-drawer
     app
-    permanent
+    expand-on-hover
     :rail="rail"
     class="pl-2"
+    v-model="navDrawer"
     floating
   >
     <!-- Logo -->
@@ -83,4 +84,11 @@ const rail = defineModel('rail', {
   type: Boolean,
   default: false,
 });
+
+const navDrawer = defineModel('navDrawer', {
+  type: Boolean,
+  default: false,
+});
+
+const { smAndUp } = useDisplay();
 </script>
