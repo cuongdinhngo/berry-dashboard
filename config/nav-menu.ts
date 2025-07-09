@@ -35,6 +35,7 @@ export const NAV_MENU = [
           {
             title: 'Cards',
             value: 'users-cards',
+            to: { name: 'user-card' }
           },
           {
             title: 'List',
