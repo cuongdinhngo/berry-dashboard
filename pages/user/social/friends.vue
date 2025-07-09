@@ -1,12 +1,12 @@
 <template>
   <UserSocialLayout>
     <v-card class="rounded-lg elevation-0">
-      <v-card-title :class="['d-flex align-center border-b-thin py-4', mdAndDown ? 'flex-column' : 'justify-space-between']">
+      <v-card-title :class="['d-flex align-center border-b-thin py-4', smAndDown ? 'flex-column' : 'justify-space-between']">
         <div>
           <span class="text-h6 font-weight-bold">Followers</span>
           <div class="text-caption text-medium-emphasis">{{ searchResultsCount }}</div>
         </div>
-        <v-sheet :width="mdAndDown ? '100%' : '20%' ">
+        <v-sheet :width="smAndDown ? '100%' : '20%' ">
           <v-row no-gutters>
             <v-col cols="12" sm="12" md="12" lg="12">
               <v-text-field
@@ -92,7 +92,7 @@ interface Follower {
   avatar: string;
 }
 
-const { mdAndDown } = useDisplay();
+const { mdAndDown, smAndDown } = useDisplay();
 const search = ref<string>('');
 
 const followers = ref<Follower[]>(Array.from({ length: 20 }, () => ({

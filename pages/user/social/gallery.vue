@@ -2,13 +2,13 @@
   <UserSocialLayout>
     <v-card>
       <!-- Header -->
-      <v-card-title :class="['d-flex align-center', mdAndDown ? 'flex-column' : 'justify-space-between']">
+      <v-card-title :class="['d-flex align-center', smAndDown ? 'flex-column' : 'justify-space-between']">
         <v-col cols="12" sm="12" md="4" lg="4" class="pa-0">
           <span class="text-h6 font-weight-bold">Gallery</span>
         </v-col>
         <v-col cols="12" sm="12" md="8" lg="8" class="pa-0">
-          <v-row no-gutters :class="mdAndDown ? 'justify-start' : 'justify-end'">
-            <v-col cols="auto" :class="mdAndDown ? 'my-2' : 'px-2'">
+          <v-row no-gutters :class="[smAndDown ? 'justify-start' : 'justify-end', 'd-flex align-center ga-2']">
+            <v-col cols="auto" :class="[smAndDown ? 'my-2' : 'px-2', 'd-flex align-center']">
               <v-text-field
                 variant="outlined"
                 placeholder="Search photos"
@@ -19,7 +19,7 @@
                 style="width: 300px;"
               ></v-text-field>
             </v-col>
-            <v-col cols="auto">
+            <v-col cols="auto" class="d-flex align-center">
               <v-btn
                 variant="flat"
                 class="font-weight-bold"
@@ -77,8 +77,7 @@
 </template>
 <script setup lang="ts">
 import { faker } from '@faker-js/faker';
-import { timestamp } from '@vueuse/core';
-const { mdAndDown } = useDisplay();
+const { mdAndDown, smAndDown } = useDisplay();
 
 const galleryItems = Array.from({ length: 20 }, (_, i) => ({
   id: i + 1,
