@@ -1,124 +1,122 @@
 <template>
-  <UserSocialBreadcrumb />
+  <UserSocialLayout>
+    <v-row>
+      <!-- User Profile Info -->
+      <v-col cols="12" sm="12" md="4" lg="4">
+        <!--Account counts -->
+        <v-card
+          class="px-4 rounded-lg elevation-0"
+        >
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in accountCounts"
+              :key="index"
+              :class="[
+                'py-3 px-0',
+                { 'border-b-thin': index < accountCounts.length - 1 }
+              ]"
+            >
+              <template #prepend>
+                <ItemHoverButton
+                  :button="{
+                    icon: item.icon,
+                    color: item.color,
+                    size: '50',
+                    defaultVariant: 'tonal',
+                    hoverVariant: 'flat',
+                  }"
+                />
+              </template>
+              <template #title>
+                <span :class="['text-h6 font-weight-bold ml-2', `text-${item.color}`]">{{ formatNumber(item.counts) }}</span>
+              </template>
+              <template #subtitle>
+                <span class="text-subtitle-2 ml-2">{{ item.title }}</span>
+              </template>
+              <template #append>
+                <v-btn
+                  icon="mdi-chevron-right"
+                  variant="text"
+                ></v-btn>
+              </template>
+            </v-list-item>
+          </v-list>
+        </v-card>
 
-  <UserSocialProfilePhoto />
+        <!-- About -->
+        <v-card
+          class="mt-4 py-4 rounded-lg elevation-0"
+        >
+          <v-card-title class="text-h6 font-weight-bold">
+            About
+          </v-card-title>
+          <v-card-text class="text-subtitle-2">
+            Passionate full-stack developer with over 5 years of experience building scalable web applications. 
+            I love creating beautiful, user-friendly interfaces and solving complex technical challenges.
+          </v-card-text>
+          
+          <v-list>
+            <v-list-item
+              v-for="(contact, index) in contacts"
+              :key="index"
+              class="py-2"
+              slim
+            >
+              <template #prepend>
+                <v-icon :icon="contact.icon" size="24" :color="contact.color"></v-icon>
+              </template>
+              <template #title>
+                <NuxtLink
+                  :to="contact.link" class="text-subtitle-2 text-decoration-none"
+                >
+                  {{ contact.link }}
+                </NuxtLink>
+              </template>
+            </v-list-item>
+          </v-list>
+        </v-card>
+      </v-col>
 
-  <v-row>
-    <!-- User Profile Info -->
-    <v-col cols="12" sm="12" md="4" lg="4">
-      <!--Account counts -->
-      <v-card
-        class="px-4 rounded-lg elevation-0"
-      >
-        <v-list>
-          <v-list-item
-            v-for="(item, index) in accountCounts"
-            :key="index"
-            :class="[
-              'py-3 px-0',
-              { 'border-b-thin': index < accountCounts.length - 1 }
-            ]"
-          >
-            <template #prepend>
-              <ItemHoverButton
-                :button="{
-                  icon: item.icon,
-                  color: item.color,
-                  size: '50',
-                  defaultVariant: 'tonal',
-                  hoverVariant: 'flat',
-                }"
-              />
-            </template>
-            <template #title>
-              <span :class="['text-h6 font-weight-bold ml-2', `text-${item.color}`]">{{ formatNumber(item.counts) }}</span>
-            </template>
-            <template #subtitle>
-              <span class="text-subtitle-2 ml-2">{{ item.title }}</span>
-            </template>
-            <template #append>
-              <v-btn
-                icon="mdi-chevron-right"
-                variant="text"
-              ></v-btn>
-            </template>
-          </v-list-item>
-        </v-list>
-      </v-card>
+      <!-- User Posts -->
+      <v-col cols="12" sm="12" md="8" lg="8">
+        <!-- Post Creation Card -->
+        <v-card
+          class="pa-4 rounded-lg elevation-0"
+        >
+          <v-textarea
+            label="What's on your mind?"
+            variant="outlined"
+            color="blue"
+            rows="4"
+            outlined
+            clearable
+          ></v-textarea>
 
-      <!-- About -->
-      <v-card
-        class="mt-4 py-4 rounded-lg elevation-0"
-      >
-        <v-card-title class="text-h6 font-weight-bold">
-          About
-        </v-card-title>
-        <v-card-text class="text-subtitle-2">
-          Passionate full-stack developer with over 5 years of experience building scalable web applications. 
-          I love creating beautiful, user-friendly interfaces and solving complex technical challenges.
-        </v-card-text>
-        
-        <v-list>
-          <v-list-item
-            v-for="(contact, index) in contacts"
-            :key="index"
-            class="py-2"
-            slim
-          >
-            <template #prepend>
-              <v-icon :icon="contact.icon" size="24" :color="contact.color"></v-icon>
-            </template>
-            <template #title>
-              <NuxtLink
-                :to="contact.link" class="text-subtitle-2 text-decoration-none"
-              >
-                {{ contact.link }}
-              </NuxtLink>
-            </template>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-col>
+          <v-card-title class="d-flex justify-space-between align-center px-0">
+            <v-btn
+              variant="text"
+              prepend-icon="mdi-attachment"
+              color="secondary"
+            ><span class="text-caption font-weight-bold">Gallery</span></v-btn>
 
-    <!-- User Posts -->
-    <v-col cols="12" sm="12" md="8" lg="8">
-      <!-- Post Creation Card -->
-      <v-card
-        class="pa-4 rounded-lg elevation-0"
-      >
-        <v-textarea
-          label="What's on your mind?"
-          variant="outlined"
-          color="blue"
-          rows="4"
-          outlined
-          clearable
-        ></v-textarea>
+            <v-btn
+              flat
+              prepend-icon="mdi-send"
+              color="secondary"
+              text="Post"
+            ></v-btn>
+          </v-card-title>
+        </v-card>
 
-        <v-card-title class="d-flex justify-space-between align-center px-0">
-          <v-btn
-            variant="text"
-            prepend-icon="mdi-attachment"
-            color="secondary"
-          ><span class="text-caption font-weight-bold">Gallery</span></v-btn>
-
-          <v-btn
-            flat
-            prepend-icon="mdi-send"
-            color="secondary"
-            text="Post"
-          ></v-btn>
-        </v-card-title>
-      </v-card>
-
-      <!-- User Posts List -->
-      <UserSocialPost
-        v-for="(post, index) in posts"
-        :key="post.id"
-        v-model:post="posts[index]"
-      />
-    </v-col>
-  </v-row>
+        <!-- User Posts List -->
+        <UserSocialPost
+          v-for="(post, index) in posts"
+          :key="post.id"
+          v-model:post="posts[index]"
+        />
+      </v-col>
+    </v-row>
+  </UserSocialLayout>
 </template>
 <script setup lang="ts">
 import { faker } from '@faker-js/faker';
