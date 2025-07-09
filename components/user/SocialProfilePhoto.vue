@@ -92,25 +92,16 @@ const tabItems = [
     to: { name: 'user-social-post' }
   },
   {
-    title: 'Followers',
-    icon: 'mdi-account-multiple',
-    value: 'followers',
-    to: { name: 'user-social-followers' }
-  },
-  {
     title: 'Friends',
-    icon: 'mdi-account-supervisor-circle',
-    value: 'friends'
+    icon: 'mdi-account-multiple',
+    value: 'friends',
+    to: { name: 'user-social-friends' }
   },
   {
     title: 'Gallery',
     icon: 'mdi-image',
-    value: 'gallery'
-  },
-  {
-    title: 'Friend Request',
-    icon: 'mdi-account-plus',
-    value: 'friend-request'
+    value: 'gallery',
+    to: { name: 'user-social-gallery' }
   }
 ]
 </script>
