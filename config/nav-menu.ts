@@ -8,11 +8,6 @@ export const NAV_MENU = [
         value: 'dashboard-default',
         to: { name: 'index' }
       },
-      {
-        title: 'Analytics',
-        icon: 'mdi-chart-bar',
-        value: 'dashboard-analytics',
-      },
     ]
   },
   {
@@ -37,10 +32,6 @@ export const NAV_MENU = [
             value: 'users-cards',
             to: { name: 'user-card' }
           },
-          {
-            title: 'List',
-            value: 'users-list',
-          },
         ]
       },
       {
@@ -59,16 +50,13 @@ export const NAV_MENU = [
             title: 'Order Details',
             value: 'customers-order-details',
           },
-          {
-            title: 'Product List',
-            value: 'customers-product-list',
-          },
         ]
       },
       {
         title: 'Chat',
         icon: 'mdi-chat',
         value: 'chat',
+        to: { name: 'chat' }
       },
       {
         title: 'Calendar',
@@ -84,20 +72,6 @@ export const NAV_MENU = [
         title: 'Kanban',
         icon: 'mdi-view-dashboard-variant-outline',
         value: 'kanban',
-      },
-      {
-        title: 'Contact',
-        icon: 'mdi-card-account-details-outline',
-        subItems: [
-          {
-            title: 'Card',
-            value: 'contact-card',
-          },
-          {
-            title: 'List',
-            value: 'contact-list',
-          },
-        ]
       },
       {
         title: 'E-Commerce',
