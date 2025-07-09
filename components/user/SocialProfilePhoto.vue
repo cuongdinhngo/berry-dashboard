@@ -16,20 +16,20 @@
 
     <v-row>
       <v-col cols="12" sm="12" md="3" lg="3" :class="mdAndDown ? 'text-center' : 'text-end'">
-          <v-avatar
-            size="150"
-            tile
-            class="pa-1 rounded-lg elevation-1 bg-white"
-            style="margin: -70px 0 0 auto;"
-          >
-            <v-img
-              src="https://picsum.photos/id/1015/100/100"
-              cover
-              width="100%"
-              height="100%"
-              rounded="lg"
-            ></v-img>
-          </v-avatar>
+        <v-avatar
+          size="150"
+          tile
+          class="pa-1 rounded-lg elevation-1 bg-white"
+          style="margin: -70px 0 0 auto;"
+        >
+          <v-img
+            src="https://picsum.photos/id/1015/100/100"
+            cover
+            width="100%"
+            height="100%"
+            rounded="lg"
+          ></v-img>
+        </v-avatar>
       </v-col>
 
       <v-col cols="12" sm="12" md="9" lg="9">
@@ -95,7 +95,7 @@ const tabItems = [
     title: 'Followers',
     icon: 'mdi-account-multiple',
     value: 'followers',
-    to: { name: 'index' }
+    to: { name: 'user-social-followers' }
   },
   {
     title: 'Friends',
