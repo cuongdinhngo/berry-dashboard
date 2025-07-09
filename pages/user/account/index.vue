@@ -42,8 +42,8 @@ const resolveComponent = (name: string) => {
       return defineAsyncComponent(() => import('@/components/account/Profile.vue'));
     case 'change-password':
       return defineAsyncComponent(() => import('@/components/account/ChangePassword.vue'));
-    // case 'settings':
-    //   return () => import('@/components/account/Settings.vue');
+    case 'settings':
+      return defineAsyncComponent(() => import('@/components/account/Settings.vue'));
   }
 };
 
