@@ -29,7 +29,7 @@
         <v-col
           v-for="(item, index) in cardItems"
           :key="item.id"
-          cols="12" sm="12" md="4" lg="4"
+          cols="12" sm="6" md="6" lg="4"
           class="pa-2"
         >
           <v-card class="pa-4 rounded-lg elevation-0 bg-container-bg">
