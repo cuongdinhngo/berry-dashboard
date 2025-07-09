@@ -13,10 +13,10 @@
         <v-btn
           icon="mdi-dots-horizontal"
           variant="text"
-          id="post-options"
+          :id="`post-options-${post.id}`"
           size="small"
         ></v-btn>
-        <v-menu activator="#post-options">
+        <v-menu :activator="`#post-options-${post.id}`">
           <v-list>
             <v-list-item title="Edit"></v-list-item>
             <v-list-item title="Delete"></v-list-item>
@@ -49,11 +49,12 @@
 
       <v-btn
         variant="text"
-        prepend-icon="mdi-share-variant-outline"
+        icon="mdi-share-variant-outline"
         color="secondary"
-        id="share-post"
+        size="small"
+        :id="`share-post-${post.id}`"
       ></v-btn>
-      <v-menu activator="#share-post">
+      <v-menu :activator="`#share-post-${post.id}`">
         <v-list slim density="compact" nav>
           <v-list-item title="Share to Facebook" prepend-icon="mdi-alpha-f-circle-outline"></v-list-item>
           <v-list-item title="Share to Twitter" prepend-icon="mdi-bird"></v-list-item>
