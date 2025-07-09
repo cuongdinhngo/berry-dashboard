@@ -1,6 +1,6 @@
 <template>
   <v-card-title class="d-flex justify-space-between align-center bg-background rounded-lg py-2">
-    <span class="text-h6 font-weight-bold">Social Profile</span>
+    <span class="text-h6 font-weight-bold">{{ headerTitle }}</span>
     <v-breadcrumbs
       :items="items"
       class="py-2 text-subtitle-2 font-weight-bold"
