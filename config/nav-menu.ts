@@ -6,6 +6,7 @@ export const NAV_MENU = [
         title: 'Default',
         icon: 'mdi-view-dashboard',
         value: 'dashboard-default',
+        to: { name: 'index' }
       },
       {
         title: 'Analytics',
@@ -24,10 +25,12 @@ export const NAV_MENU = [
           {
             title: 'Social Profile',
             value: 'users-social-profile',
+            to: { name: 'user-social-post' }
           },
           {
             title: 'Accounts',
             value: 'users-accounts',
+            to: { name: 'user-account' }
           },
           {
             title: 'Cards',
