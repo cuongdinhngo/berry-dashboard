@@ -40,6 +40,7 @@
           :title="item.title"
           :prepend-icon="item.icon"
           :value="item.value || item.title"
+          :to="item.to"
           color="secondary"
           density="compact"
           nav
@@ -66,6 +67,7 @@
             :key="i"
             :title="subMenu.title"
             :value="subMenu.value || subMenu.title"
+            :to="subMenu.to"
             prepend-icon="mdi-circle-small"
             density="compact" nav
             color="secondary"
