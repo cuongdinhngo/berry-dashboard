@@ -26,15 +26,27 @@
     </v-card-title>
     <v-card-text class="mt-6">
       <v-tabs-window v-model="tab">
-        <v-tabs-window-item value="profile">
-          <AccountProfile />
+        <v-tabs-window-item :value="tab">
+          <component :is="resolveComponent(tab)" />
         </v-tabs-window-item>
       </v-tabs-window>
     </v-card-text>
   </v-card>
 </template>
 <script setup lang="ts">
-const tab = ref('profile');
+const tab = useRouteQuery('tab', 'profile');
+
+const resolveComponent = (name: string) => {
+  switch (name) {
+    case 'profile':
+      return defineAsyncComponent(() => import('@/components/account/Profile.vue'));
+    case 'change-password':
+      return defineAsyncComponent(() => import('@/components/account/ChangePassword.vue'));
+    // case 'settings':
+    //   return () => import('@/components/account/Settings.vue');
+  }
+};
+
 const tabItems = [
   {
     title: 'Profile',
