@@ -107,11 +107,13 @@
                 variant="text"
                 icon="mdi-email-variant"
                 size="small"
+                @click="markAsUnread"
               />
               <v-btn
                 variant="text"
                 icon="mdi-email-open"
                 size="small"
+                @click="markAsRead"
               />
             </div>
           </div>
@@ -291,7 +293,7 @@ const mails = Array.from({ length: 50 }, () => ({
 }));
 
 const selectedMails = ref<string[]>([]);
-const mailList = ref(false);
+const mailList = ref(true);
 const currentMail = ref({});
 const showMail = ref(false);
 const filteredMails = ref(mails);
@@ -300,6 +302,29 @@ function readMail(mail: any) {
   currentMail.value = mail;
   showMail.value = true;
 }
+
+function markAsRead() {
+  if (selectedMails.value.length === 0) return;
+
+  selectedMails.value.forEach(id => {
+    const mail = filteredMails.value.find(mail => mail.id === id);
+    if (mail) {
+      mail.unread = false;
+    }
+  });
+}
+
+function markAsUnread() {
+  if (selectedMails.value.length === 0) return;
+
+  selectedMails.value.forEach(id => {
+    const mail = filteredMails.value.find(mail => mail.id === id);
+    if (mail) {
+      mail.unread = true;
+    }
+  });
+}
+
 
 function selectAllMails() {
   if (selectedMails.value.length === filteredMails.value.length) {
