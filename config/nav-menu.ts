@@ -73,6 +73,7 @@ export const NAV_MENU = [
         title: 'Kanban',
         icon: 'mdi-view-dashboard-variant-outline',
         value: 'kanban',
+        to: { name: 'kanban' }
       },
       {
         title: 'E-Commerce',
