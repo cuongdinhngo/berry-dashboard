@@ -8,11 +8,11 @@
       <v-card
         v-for="(board, index) in boards"
         :key="board.value"
-        class="bg-container-bg rounded-lg elevation-0 mx-2 flex-shrink-0"
+        class="bg-grey-lighten-4 rounded-lg elevation-0 mx-2 flex-shrink-0"
         width="300px">
         <v-card-title class="text-subtitle-1 font-weight-bold">{{ board.title }}</v-card-title>
         <ItemScrollableCard
-          :height="650"
+          :height="600"
           class="drop-zone"
           @drop="onDrop($event, board.value)"
           @dragover.prevent
@@ -75,7 +75,7 @@
       </v-card>
 
       <v-card
-        class="bg-container-bg rounded-lg elevation-0 mx-2 flex-shrink-0"
+        class="bg-grey-lighten-4 rounded-lg elevation-0 mx-2 flex-shrink-0"
         width="300px"
       >
         <v-card-actions>
