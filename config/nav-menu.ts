@@ -67,6 +67,7 @@ export const NAV_MENU = [
         title: 'Mail',
         icon: 'mdi-email',
         value: 'mail',
+        to: { name: 'mail' }
       },
       {
         title: 'Kanban',
