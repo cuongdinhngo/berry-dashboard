@@ -11,7 +11,6 @@
       class="elevation-0"
       :rounded="mdAndDown ? '' : 'lg'"
       floating
-      app
     >
       <v-list-item class="py-4">
         <template #prepend>
