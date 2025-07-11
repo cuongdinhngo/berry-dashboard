@@ -59,7 +59,7 @@
             :key="product.id"
             cols="12" sm="6" md="4" lg="4" class="pa-2"
           >
-            <v-card class="elevation-0 rounded-lg">
+            <v-card class="elevation-0 rounded-lg" :to="{ name: 'ecom-detail-id', params: { id: product.id } }">
               <v-responsive :aspect-ratio="16/9">
                 <v-img
                   :src="product.imageUrl"
