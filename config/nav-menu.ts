@@ -86,7 +86,8 @@ export const NAV_MENU = [
           },
           {
             title: 'Product Details',
-            value: 'ecommerce-product-details',
+            value: 'ecom-product-details',
+            to: { name: 'ecom-detail-id', params: { id: '1' } }
           },
           {
             title: 'Product List',
