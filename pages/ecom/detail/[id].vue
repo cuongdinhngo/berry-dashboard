@@ -95,7 +95,7 @@
               label="Select Size"
               variant="outlined"
               density="compact"
-              width="50%"
+              width="70%"
               rounded="lg"
               hide-details
             ></v-select>
@@ -115,7 +115,7 @@
               density="compact"
               variant="outlined"
               rounded="lg"
-              width="50%"
+              width="70%"
             ></v-number-input>
           </v-col>
         </v-row>
@@ -218,6 +218,7 @@
                     color="amber"
                     size="large"
                     readonly
+                    density="comfortable"
                   />
                   <span class="text-subtitle-2 text-medium-emphasis">
                     (123)
