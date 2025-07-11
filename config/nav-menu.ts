@@ -82,6 +82,7 @@ export const NAV_MENU = [
           {
             title: 'Products',
             value: 'ecommerce-products',
+            to: { name: 'ecom-products' }
           },
           {
             title: 'Product Details',
