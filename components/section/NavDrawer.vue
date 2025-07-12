@@ -9,7 +9,6 @@
   >
     <!-- Logo -->
     <v-list-item
-      title="Berry"
       density="compact"
       height="80"
       class="px-1"
@@ -19,9 +18,10 @@
         <v-icon
           size="40"
           color="secondary"
-          class="rounded-circle"
+          class="rounded-circle mr-2"
           style="opacity: 1 !important;"
-        >mdi-fruit-grapes-outline</v-icon>
+        >mdi-fruit-cherries</v-icon>
+        <span class="text-h5 font-weight-bold text-secondary">Berry</span>
       </template>
     </v-list-item>
 
