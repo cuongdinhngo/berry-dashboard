@@ -422,45 +422,211 @@ const boards = ref([
     tasks: [
       {
         id: faker.string.uuid(),
-        title: 'Task 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        title: 'Design User Authentication Flow',
+        description: 'Create wireframes and mockups for the login and registration process including forgot password functionality.',
         image: 'https://picsum.photos/id/1/280/210',
         status: 'ready',
-        members: members.value.slice(0, 3),
-        labels: labels.value.slice(0, 2),
-        dueDate: '2023-07-20',
+        members: members.value.slice(0, 2),
+        labels: [labels.value[3], labels.value[0]],
+        dueDate: '2025-07-25',
         comments: [
           {
             member: members.value[0],
-            text: 'This is a comment on Task 1.',
-            timestamp: '2023-07-15T10:00:00Z',
-          },
-          {
-            member: members.value[1],
-            text: 'Another comment on Task 1.',
-            timestamp: '2023-07-16T12:00:00Z',
+            text: 'We should include social login options like Google and GitHub.',
+            timestamp: '2025-07-10T10:00:00Z',
           },
         ],
         attachments: [
           {
-            name: 'Attachment 1',
+            name: 'Auth Flow Wireframe',
             url: 'https://picsum.photos/id/1/280/210',
-            size: '55 KB',
+            size: '120 KB',
             isCover: true,
           },
-          {
-            name: 'Attachment 2',
-            url: 'https://picsum.photos/id/2/280/210',
-            size: '45 KB',
-            isCover: false,
-          },
         ],
+      },
+      {
+        id: faker.string.uuid(),
+        title: 'Set up CI/CD Pipeline',
+        description: 'Configure GitHub Actions for automated testing and deployment to staging environment.',
+        image: '',
+        status: 'ready',
+        members: members.value.slice(2, 4),
+        labels: [labels.value[4], labels.value[2]],
+        dueDate: '2025-07-30',
+        comments: [],
+        attachments: [],
+      },
+      {
+        id: faker.string.uuid(),
+        title: 'Research Dashboard Analytics',
+        description: 'Investigate best practices for dashboard analytics and reporting features.',
+        image: 'https://picsum.photos/id/10/280/210',
+        status: 'ready',
+        members: members.value.slice(0, 1),
+        labels: [labels.value[0]],
+        dueDate: '2025-08-05',
+        comments: [],
+        attachments: [],
       }
     ]
   },
-  { title: 'W.I.P', value: 'wip', tasks: [] },
-  { title: 'In QA', value: 'in-qa', tasks: [] },
-  { title: 'Done', value: 'done', tasks: [] },
+  {
+    title: 'W.I.P',
+    value: 'wip',
+    tasks: [
+      {
+        id: faker.string.uuid(),
+        title: 'Implement Product Search API',
+        description: 'Build REST API endpoints for product search with filtering by category, price range, and ratings.',
+        image: '',
+        status: 'wip',
+        members: members.value.slice(1, 3),
+        labels: [labels.value[0], labels.value[2]],
+        dueDate: '2025-07-22',
+        comments: [
+          {
+            member: members.value[1],
+            text: 'API endpoints are 80% complete. Working on the filtering logic now.',
+            timestamp: '2025-07-11T14:30:00Z',
+          },
+          {
+            member: members.value[2],
+            text: 'Should we add fuzzy search capabilities?',
+            timestamp: '2025-07-12T09:15:00Z',
+          },
+        ],
+        attachments: [],
+      },
+      {
+        id: faker.string.uuid(),
+        title: 'Fix Checkout Page Validation',
+        description: 'Address form validation issues in the checkout process and improve error messaging.',
+        image: '',
+        status: 'wip',
+        members: members.value.slice(0, 2),
+        labels: [labels.value[1]],
+        dueDate: '2025-07-18',
+        comments: [
+          {
+            member: members.value[0],
+            text: 'Found the issue with credit card validation. Working on the fix.',
+            timestamp: '2025-07-12T11:20:00Z',
+          },
+        ],
+        attachments: [],
+      }
+    ]
+  },
+  {
+    title: 'In QA',
+    value: 'in-qa',
+    tasks: [
+      {
+        id: faker.string.uuid(),
+        title: 'User Profile Management',
+        description: 'Complete user profile editing functionality including avatar upload and personal information updates.',
+        image: 'https://picsum.photos/id/20/280/210',
+        status: 'in-qa',
+        members: members.value.slice(2, 5),
+        labels: [labels.value[0]],
+        dueDate: '2025-07-20',
+        comments: [
+          {
+            member: members.value[3],
+            text: 'Testing on different devices. Found minor UI issues on mobile.',
+            timestamp: '2025-07-11T16:45:00Z',
+          },
+        ],
+        attachments: [
+          {
+            name: 'QA Test Results',
+            url: 'https://picsum.photos/id/20/280/210',
+            size: '85 KB',
+            isCover: false,
+          },
+        ],
+      },
+      {
+        id: faker.string.uuid(),
+        title: 'Email Notification System',
+        description: 'Implement email notifications for order confirmations, shipping updates, and account activities.',
+        image: '',
+        status: 'in-qa',
+        members: members.value.slice(1, 2),
+        labels: [labels.value[0], labels.value[5]],
+        dueDate: '2025-07-24',
+        comments: [],
+        attachments: [],
+      }
+    ]
+  },
+  {
+    title: 'Done',
+    value: 'done',
+    tasks: [
+      {
+        id: faker.string.uuid(),
+        title: 'Kanban Board Drag & Drop',
+        description: 'Implement drag and drop functionality for kanban board with visual feedback and smooth animations.',
+        image: 'https://picsum.photos/id/30/280/210',
+        status: 'done',
+        members: members.value.slice(0, 3),
+        labels: [labels.value[0], labels.value[3]],
+        dueDate: '2025-07-15',
+        comments: [
+          {
+            member: members.value[0],
+            text: 'Successfully implemented! The drag and drop works smoothly across all boards.',
+            timestamp: '2025-07-12T08:30:00Z',
+          },
+          {
+            member: members.value[1],
+            text: 'Great work! The visual feedback really enhances the user experience.',
+            timestamp: '2025-07-12T10:15:00Z',
+          },
+        ],
+        attachments: [
+          {
+            name: 'Demo Video',
+            url: 'https://picsum.photos/id/30/280/210',
+            size: '2.5 MB',
+            isCover: true,
+          },
+        ],
+      },
+      {
+        id: faker.string.uuid(),
+        title: 'Database Schema Design',
+        description: 'Design and implement the initial database schema for user management, products, and orders.',
+        image: '',
+        status: 'done',
+        members: members.value.slice(3, 5),
+        labels: [labels.value[4]],
+        dueDate: '2025-07-10',
+        comments: [
+          {
+            member: members.value[4],
+            text: 'Database schema is complete and deployed to production.',
+            timestamp: '2025-07-10T17:00:00Z',
+          },
+        ],
+        attachments: [],
+      },
+      {
+        id: faker.string.uuid(),
+        title: 'Setup Project Structure',
+        description: 'Initialize Nuxt 3 project with Vuetify, configure TypeScript, and set up basic routing.',
+        image: '',
+        status: 'done',
+        members: members.value.slice(0, 1),
+        labels: [labels.value[4], labels.value[5]],
+        dueDate: '2025-07-05',
+        comments: [],
+        attachments: [],
+      }
+    ]
+  },
 ]);
 
 function onDragStart(event: DragEvent, task: any) {
