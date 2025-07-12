@@ -90,12 +90,9 @@ export const NAV_MENU = [
             to: { name: 'ecom-detail-id', params: { id: '1' } }
           },
           {
-            title: 'Product List',
-            value: 'ecommerce-product-list',
-          },
-          {
             title: 'Checkout',
             value: 'ecommerce-checkout',
+            to: { name: 'ecom-checkout' }
           },
         ]
       }
