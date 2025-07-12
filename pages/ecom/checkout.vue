@@ -262,6 +262,8 @@
                     <v-card
                       class="elevation-0 rounded-lg border-thin"
                       text="Delivery within 5-7 business days."
+                      @click="selectedDelivery = 'standard'; shippingCost = 0"
+                      style="cursor: pointer;"
                     >
                       <template #prepend>
                         <v-radio
@@ -283,6 +285,8 @@
                     <v-card
                       class="elevation-0 rounded-lg border-thin"
                       text="Delivery within 1-2 business days."
+                      @click="selectedDelivery = 'express'; shippingCost = 5"
+                      style="cursor: pointer;"
                     >
                       <template #prepend>
                         <v-radio
@@ -314,6 +318,8 @@
                       class="elevation-0 rounded-lg border-thin"
                       text="We support all major credit cards."
                       min-height="110px"
+                      @click="selectedPayment = 'card'"
+                      style="cursor: pointer;"
                     >
                       <template #prepend>
                         <v-radio
@@ -335,6 +341,8 @@
                       class="elevation-0 rounded-lg border-thin"
                       text="Pay with cash when the product is delivered."
                       min-height="110px"
+                      @click="selectedPayment = 'cod'"
+                      style="cursor: pointer;"
                     >
                       <template #prepend>
                         <v-radio
