@@ -6,14 +6,12 @@
         :key="index"
         :value="index"
       >
-        <v-responsive :aspect-ratio="16/9">
           <v-img
             :src="item"
             rounded="lg"
             width="100%"
             height="100%"
           />
-        </v-responsive>
       </v-carousel-item>
     </v-carousel>
     <v-slide-group

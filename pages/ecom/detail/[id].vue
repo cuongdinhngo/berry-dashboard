@@ -9,8 +9,8 @@
       <v-col cols="12" sm="12" md="6" lg="6" class="">
         <EcomImageGallery :images="images" />
       </v-col>
-      <v-col cols="12" md="6" lg="6" class="px-4">
-        <v-card-title class="d-flex justify-space-between align-center">
+      <v-col cols="12" md="6" lg="6" class="">
+        <v-card-title class="d-flex justify-space-between align-center px-0">
           <v-chip label rounded="xl" color="green">In Stock</v-chip>
           <v-rating
             length="1"
@@ -22,12 +22,12 @@
           />
         </v-card-title>
 
-        <v-card-title class="d-flex align-center ga-3">
+        <v-card-title class="d-flex align-center ga-2 px-0">
           <span class="text-h6 font-weight-bold">{{ faker.commerce.productName() }}</span>
           <v-chip color="blue" variant="outlined">New</v-chip>
         </v-card-title>
 
-        <v-card-title class="text-wrap">
+        <v-card-title class="text-wrap px-0">
           <p class="text-subtitle-2">{{ faker.commerce.productDescription() }}</p>
         </v-card-title>
 
@@ -86,7 +86,7 @@
 
         <!-- Select Size -->
         <v-row no-gutters class="pa-2">
-          <v-col cols="3" sm="3" md="3" lg="3">
+          <v-col cols="3" sm="3" md="3" lg="3" class="align-self-center">
             <span class="text-subtitle-1">Size:</span>
           </v-col>
           <v-col cols="9" sm="9" md="9" lg="9">
@@ -104,12 +104,12 @@
 
         <!-- Select Quantity -->
         <v-row no-gutters class="pa-2">
-          <v-col cols="3" sm="3" md="3" lg="3">
+          <v-col cols="3" sm="3" md="3" lg="3" class="align-self-center">
             <span class="text-subtitle-1">Quantity:</span>
           </v-col>
           <v-col cols="9" sm="9" md="9" lg="9">
             <v-number-input
-              control-variant="split"
+              control-variant="stacked"
               :min="1"
               hide-details
               density="compact"
@@ -121,7 +121,7 @@
         </v-row>
 
         <!-- Actions -->
-        <v-row no-gutters class="pa-4">
+        <v-row no-gutters class="py-4">
           <v-col cols="6" sm="6" md="6" lg="6" class="px-2">
             <v-btn
               variant="elevated"
