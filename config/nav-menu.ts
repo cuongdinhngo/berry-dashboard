@@ -35,33 +35,10 @@ export const NAV_MENU = [
         ]
       },
       {
-        title: 'Customers',
-        icon: 'mdi-account-multiple',
-        subItems: [
-          {
-            title: 'Customer List',
-            value: 'customers-list',
-          },
-          {
-            title: 'Create Invoice',
-            value: 'customers-create-invoice',
-          },
-          {
-            title: 'Order Details',
-            value: 'customers-order-details',
-          },
-        ]
-      },
-      {
         title: 'Chat',
         icon: 'mdi-chat',
         value: 'chat',
         to: { name: 'chat' }
-      },
-      {
-        title: 'Calendar',
-        icon: 'mdi-calendar',
-        value: 'calendar',
       },
       {
         title: 'Mail',
