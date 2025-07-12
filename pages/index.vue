@@ -134,16 +134,16 @@
                     </v-col>
 
                     <v-col cols="6" sm="6" md="6" lg="6">
-                        <v-sparkline
-                          :model-value="[10, 20, 30, 40, 50, 40, 70, 76, 89, 68, 104, 120]"
-                          color="white"
-                          auto-draw
-                          :smooth="true"
-                          :line-width="5"
-                          padding="0"
-                          height="100%"
-                        >
-                        </v-sparkline>
+                      <v-sparkline
+                        :model-value="[10, 20, 30, 40, 50, 40, 70, 76, 89, 68, 104, 120]"
+                        color="white"
+                        auto-draw
+                        :smooth="true"
+                        :line-width="5"
+                        padding="0"
+                        height="100%"
+                      >
+                      </v-sparkline>
                     </v-col>
                   </v-row>
                 </v-tabs-window-item>
@@ -156,8 +156,81 @@
       <!-- Bar Chart -->
       <v-row>
         <v-col cols="12" sm="12" md="12" lg="12">
-          <v-card width="100%" min-height="600px" class="bg-blue-darken-1">
+          <v-card width="100%" min-height="300px" class="bg-background my-4 elevation-0 rounded-lg">
+            <v-card-title class="d-flex justify-space-between align-center mt-4">
+              <span class="text-subtitle-1 font-weight-bold">Sales Overview</span>
+              <v-btn
+                icon="mdi-dots-horizontal"
+                variant="text"
+                id="menu-actions"
+                size="small"
+                tile
+                rounded="lg"
+              ></v-btn>
+              <v-menu activator="#menu-actions">
+                <v-list density="compact" slim nav>
+                  <v-list-item
+                    v-for="(item, index) in ['Today', 'This Month', 'This Year']"
+                    :key="index"
+                    :value="index"
+                    :title="item"
+                  >
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-card-title>
 
+            <v-card-text>
+              <v-sparkline
+                :model-value="[10, 20, 30, 40, 50, 40, 70, 76, 89, 68, 104, 120]"
+                color="primary"
+                :smooth="true"
+                :line-width="5"
+                padding="0"
+                height="100%"
+                auto-draw
+                :fill="true"
+              >
+              </v-sparkline>
+            </v-card-text>
+          </v-card>
+
+          <v-card width="100%" min-height="300px" class="bg-background my-4 elevation-0 rounded-lg">
+            <v-card-title class="d-flex justify-space-between align-center mt-4">
+              <span class="text-subtitle-1 font-weight-bold">Visitor Counts</span>
+              <v-btn
+                icon="mdi-dots-horizontal"
+                variant="text"
+                id="menu-actions"
+                size="small"
+                tile
+                rounded="lg"
+              ></v-btn>
+              <v-menu activator="#menu-actions">
+                <v-list density="compact" slim nav>
+                  <v-list-item
+                    v-for="(item, index) in ['Daily', 'Weekly', 'Monthly']"
+                    :key="index"
+                    :value="index"
+                    :title="item"
+                  >
+                  </v-list-item>
+                </v-list>
+              </v-menu>
+            </v-card-title>
+
+            <v-card-text>
+              <v-sparkline
+                :model-value="[1432, 2352, 3243, 1200, 4321, 2345, 6789, 1234, 5678, 9101, 1121, 3141]"
+                color="secondary"
+                :smooth="true"
+                :line-width="2"
+                padding="0"
+                height="100%"
+                auto-draw
+              >
+              </v-sparkline>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>

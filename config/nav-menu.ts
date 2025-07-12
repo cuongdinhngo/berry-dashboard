@@ -3,8 +3,8 @@ export const NAV_MENU = [
     head: 'Dashboard',
     items: [
       {
-        title: 'Default',
-        icon: 'mdi-view-dashboard',
+        title: 'Analytics',
+        icon: 'mdi-finance',
         value: 'dashboard-default',
         to: { name: 'index' }
       },
