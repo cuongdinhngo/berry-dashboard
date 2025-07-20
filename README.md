@@ -260,4 +260,14 @@ This project demonstrates:
 
 ---
 
-⭐ If you found this project helpful, please give it a star on GitHub!
+## 👨‍💻 Author
+
+**Cuong Dinh Ngo**
+- 🌐 Portfolio: [cuongdinhngo.github.io](https://cuongdinhngo.github.io/)
+- 💼 GitHub: [@cuongdinhngo](https://github.com/cuongdinhngo)
+- 📧 Email: dinhcuongngo@gmail.com
+- 💬 LinkedIn: [Connect with me](https://www.linkedin.com/in/ngodinhcuong/)
+
+---
+
+**Built with ❤️ by [Cuong Dinh Ngo](https://cuongdinhngo.github.io/)**
