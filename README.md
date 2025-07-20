@@ -31,14 +31,6 @@ A modern, responsive admin dashboard built with **Nuxt 3**, **Vue 3**, and **Vue
 ![Social Screenshot](./public/screenshots/social.png)
 *User profiles with social interactions, real-time chat, and communication features*
 
-### Mobile Responsive Design
-<div align="center">
-  <img src="./public/screenshots/mobile-dashboard.png" alt="Mobile Dashboard" width="300"/>
-  <img src="./public/screenshots/mobile-menu.png" alt="Mobile Navigation" width="300"/>
-</div>
-
-*Fully responsive design optimized for mobile devices*
-
 ## ✨ Features
 
 ### 🎨 **Modern UI/UX**
