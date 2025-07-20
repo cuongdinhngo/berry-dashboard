@@ -1,6 +1,6 @@
 <template>
   <ItemHeaderBreadcrumb
-    header-title="Chats Page"
+    header-title="Mail Page"
     :items="items"
   />
 
